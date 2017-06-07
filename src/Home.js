@@ -2,6 +2,8 @@
  * Created by Tony Wang on 6/6/2017.
  */
 import React, { Component } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 class Home extends  Component{
@@ -26,10 +28,33 @@ class Home extends  Component{
             <div >
                 <h1 style={style.font}>TONY WANG</h1>
                 <h2 style={{color: 'gray'}}>DEVELOPER</h2>
-                {/*<h3 style={style.border}>ABOUT ME</h3>*/}
+                <MenuButtons  setSelectedToAboutMe={this.props.setSelectedToAboutMe}
+                              setSelectedToProjects={this.props.setSelectedToProjects}
+                              setSelectedToContact={this.props.setSelectedToContact}/>
 
             </div>
         )
     }
 }
+
+class MenuButtons extends Component {
+
+
+    render(){
+        return(
+            <div>
+                <MuiThemeProvider>
+                    <RaisedButton label="About Me" onClick={()=>this.props.setSelectedToAboutMe()}/>
+                </MuiThemeProvider>
+                <MuiThemeProvider>
+                    <RaisedButton label="Contact" onClick={()=>this.props.setSelectedToContact()}/>
+                </MuiThemeProvider>
+
+            </div>
+        )
+    }
+}
+
+
+
 export default Home

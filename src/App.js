@@ -77,7 +77,12 @@ class App extends Component {
     homeHTML(){
         return(
                 <div style={this.style.home}>
-                    <Home/>
+                    <Home
+                        setSelectedToAboutMe={this.setSelectedToAboutMe.bind(this)}
+                        setSelectedToProjects={this.setSelectedToProjects.bind(this)}
+                        setSelectedToContact={this.setSelectedToContact.bind(this)}
+
+                    />
                  </div>
               )
     }
