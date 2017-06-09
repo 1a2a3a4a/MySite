@@ -23,6 +23,7 @@ class Home extends  Component{
                 fontFamily:'Times New Roman',
 
             },
+
         };
         return(
             <div >
@@ -41,13 +42,20 @@ class MenuButtons extends Component {
 
 
     render(){
+
+        const style = {
+            button:{
+                marginRight: '0.3em',
+            },
+        };
+
         return(
             <div>
                 <MuiThemeProvider>
-                    <RaisedButton label="About Me" onClick={()=>this.props.setSelectedToAboutMe()}/>
+                    <RaisedButton style={style.button}label="About Me" onClick={()=>this.props.setSelectedToAboutMe()}/>
                 </MuiThemeProvider>
                 <MuiThemeProvider>
-                    <RaisedButton label="Contact" onClick={()=>this.props.setSelectedToContact()}/>
+                    <RaisedButton style={style.button}label="Contact" onClick={()=>this.props.setSelectedToContact()}/>
                 </MuiThemeProvider>
 
             </div>
