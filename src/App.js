@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-import './App.css';
+import './styles/App.css';
 import MenuTabs from './Menu'
 import Home from './Home'
 import AboutMe from "./AboutMe";
-
+import { CSSTransitionGroup } from 'react-transition-group'
+import './animations/Animaions.css'
 
 class App extends Component {
     constructor(){
@@ -76,7 +77,7 @@ class App extends Component {
 
     homeHTML(){
         return(
-                <div style={this.style.home}>
+                <div key={1} style={this.style.home}>
                     <Home
                         setSelectedToAboutMe={this.setSelectedToAboutMe.bind(this)}
                         setSelectedToProjects={this.setSelectedToProjects.bind(this)}
@@ -89,7 +90,7 @@ class App extends Component {
 
     aboutMeHTML(){
         return(
-                <div style={this.style.home}>
+                <div key={2} style={this.style.home}>
                     <AboutMe/>
                 </div>
         )
@@ -124,7 +125,13 @@ class App extends Component {
                              setSelectedToContact={this.setSelectedToContact.bind(this)}
                 />
               </div>
+              <CSSTransitionGroup transitionName="example"
+                                  transitionEnterTimeout={500}
+                                  transitionLeaveTimeout={200}
+
+                                  >
               {renderOnMain}
+              </CSSTransitionGroup>
           </div>
     );
   }

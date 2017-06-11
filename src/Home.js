@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-
 class Home extends  Component{
 
 
@@ -26,20 +25,18 @@ class Home extends  Component{
 
         };
         return(
-            <div >
+            <div>
                 <h1 style={style.font}>TONY WANG</h1>
                 <h2 style={{color: 'gray'}}>DEVELOPER</h2>
                 <MenuButtons  setSelectedToAboutMe={this.props.setSelectedToAboutMe}
                               setSelectedToProjects={this.props.setSelectedToProjects}
                               setSelectedToContact={this.props.setSelectedToContact}/>
-
             </div>
         )
     }
 }
 
 class MenuButtons extends Component {
-
 
     render(){
 
@@ -62,7 +59,5 @@ class MenuButtons extends Component {
         )
     }
 }
-
-
 
 export default Home
