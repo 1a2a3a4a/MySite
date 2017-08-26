@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-
 import './styles/App.css';
-import MenuTabs from './Menu'
-import Home from './Home'
-import AboutMe from "./AboutMe";
-import { CSSTransitionGroup } from 'react-transition-group'
-import './animations/Animaions.css'
-
+import Home from './components/Home'
+import AboutMe from "./components/AboutMe";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Header from './components/Header'
+import * as Strings from './constants/strings'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 class App extends Component {
     constructor(){
         super();
 
         this.state = {
-            selected: 'home',
+            selected: Strings.home,
         };
         this.style = {
             tabs: {
@@ -26,52 +26,56 @@ class App extends Component {
                 justifyContent: 'center',
                 alignContent: 'center',
                 alignItems: 'center',
-                marginTop: '8em',
+                marginTop: '100px',
+            },
+            container: {
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
             }
         };
     }
 
-    setSelectedToAboutMe() {
+    componentWillUpdate() {
+        document.title = "Tony Wang"
+    }
+    setSelectedToAboutMe = () => {
         this.setState({
-            selected: 'aboutMe'
+            selected: Strings.aboutMe
 
         });
     }
-    setSelectedToContact(){
+    setSelectedToContact = () =>{
         this.setState({
-            selected: 'contact'
+            selected: Strings.contact
         })
     }
 
-    setSelectedToProjects(){
+    setSelectedToProjects = () =>{
         this.setState({
-            selected: 'projects'
+            selected: Strings.projects
         })
     }
 
-    setSelectedToHome(){
+    setSelectedToHome = () =>{
         this.setState({
-            selected: 'home'
+            selected: Strings.home
         })
     }
 
     getSelectedMenuItem(){
 
         switch(this.state.selected){
-            case 'aboutMe':
+            case Strings.aboutMe:
                 return this.aboutMeHTML()
-            case 'projects':
+            case Strings.projects:
                 return this.projectsHTML();
-
-            case 'home':
+            case Strings.home:
                 return this.homeHTML();
-
-            case 'contact':
+            case Strings.contact:
                 return this.contactHTML()
-
-            default: return '';
-
-
+            default:
+                return '';
         }
     }
 
@@ -79,18 +83,17 @@ class App extends Component {
         return(
                 <div key={1} style={this.style.home}>
                     <Home
-                        setSelectedToAboutMe={this.setSelectedToAboutMe.bind(this)}
-                        setSelectedToProjects={this.setSelectedToProjects.bind(this)}
-                        setSelectedToContact={this.setSelectedToContact.bind(this)}
-
+                        setSelectedToAboutMe={this.setSelectedToAboutMe}
+                        setSelectedToProjects={this.setSelectedToProjects}
+                        setSelectedToContact={this.setSelectedToContact}
                     />
                  </div>
-              )
+        )
     }
 
     aboutMeHTML(){
         return(
-                <div key={2} style={this.style.home}>
+                <div key={2} style={this.style.container}>
                     <AboutMe/>
                 </div>
         )
@@ -113,25 +116,20 @@ class App extends Component {
     }
 
     render() {
-
-      const renderOnMain = this.getSelectedMenuItem();
-
+      const selectedMenuItem = this.getSelectedMenuItem();
       return (
-          <div >
-              <div style={{cursor: 'pointer'}} onClick={()=> this.setSelectedToHome()}>HOME</div>
-              <div style={this.style.tabs}>
-                <MenuTabs    setSelectedToAboutMe={this.setSelectedToAboutMe.bind(this)}
-                             setSelectedToProjects={this.setSelectedToProjects.bind(this)}
-                             setSelectedToContact={this.setSelectedToContact.bind(this)}
-                />
-              </div>
-              <CSSTransitionGroup transitionName="example"
-                                  transitionEnterTimeout={500}
-                                  transitionLeaveTimeout={200}
-
-                                  >
-              {renderOnMain}
-              </CSSTransitionGroup>
+          <div>
+            <MuiThemeProvider>
+                <div>
+                    <Header
+                            setSelectedToHome={this.setSelectedToHome}
+                            setSelectedToAboutMe={this.setSelectedToAboutMe}
+                            setSelectedToProjects={this.setSelectedToProjects}
+                            setSelectedToContact={this.setSelectedToContact}
+                    />
+                    {selectedMenuItem}
+                </div>
+            </MuiThemeProvider>
           </div>
     );
   }
