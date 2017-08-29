@@ -38,7 +38,7 @@ class App extends Component {
         };
     }
 
-    componentWillUpdate() {
+    componentWillMount() {
         document.title = "Tony Wang"
     }
     setSelectedToAboutMe = () => {
@@ -112,7 +112,7 @@ class App extends Component {
     projectsHTML(){
         return(
             <div style={this.style.container}>
-                <Projects/>
+                <Projects selected={this.state.selected}/>
             </div>
         )
     }
@@ -128,6 +128,7 @@ class App extends Component {
                             setSelectedToAboutMe={this.setSelectedToAboutMe}
                             setSelectedToProjects={this.setSelectedToProjects}
                             setSelectedToContact={this.setSelectedToContact}
+                            selected={this.state.selected}
                     />
                     {selectedMenuItem}
                 </div>

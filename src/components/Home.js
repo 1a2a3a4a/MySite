@@ -43,6 +43,7 @@ class MenuButtons extends Component {
         const style = {
             button:{
                 marginRight: '0.3em',
+                fontFamily: 'Rokkitt',
             },
         };
         return(

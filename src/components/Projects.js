@@ -19,7 +19,18 @@ class Projects extends  Component {
         this.style = {
             header: {
                 display: 'flex',
+            },
+            listItem: {
+                cursor: 'pointer',
             }
+        }
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.selected === Strings.projects){
+            this.setState({
+                render_project: 'default',
+            })
         }
     }
 
@@ -28,13 +39,13 @@ class Projects extends  Component {
             case Strings.queueliary:
                 return <Queueliary/>
             case Strings.RealTimeSummoners:
-
+                break;
             default:
                 return(
                 <Paper>
                     <ul>
-                        <li>Queueliary - A real time online queue system aimed for students and teachers</li>
-                        <li>Coming soon.... Real time summoner cd timers for league of legends</li>
+                        <li style={this.style.listItem} onClick={this.clickQueueliary}> Queueliary - A real time online queue system aimed for students and teachers</li>
+                        <li style={this.style.listItem}>Coming soon.... Real time summoner cd timers for league of legends</li>
                     </ul>
                 </Paper>)
         }

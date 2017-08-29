@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import FlatButton from 'material-ui/FlatButton'
-
+import * as Strings from '../constants/strings'
 class Header extends Component {
     constructor(props){
         super(props)
@@ -19,25 +19,61 @@ class Header extends Component {
                 justifyContent: 'flex-end',
 
             },
+
         };
+        this.state = {
+            homeStyle: null,
+            aboutMeStyle: null,
+            projectsStyle: null,
+            contactStyle: null,
+        }
     }
+
+    clickHome = () => {
+        this.props.setSelectedToHome()
+    }
+    clickAboutMe = () => {
+        this.props.setSelectedToAboutMe()
+    }
+    clickProjects = () => {
+        this.props.setSelectedToProjects()
+    }
+    clickContact = () => {
+        this.props.setSelectedToContact()
+    }
+
+    setStyles(){
+        switch(this.props.selected){
+            case Strings.home:
+                break;
+            case Strings.aboutMe:
+                break;
+            case Strings.projects:
+                break;
+            case Strings.contact:
+                break;
+
+        }
+    }
+
+
     render(){
+
         return(
             <div>
                 <div style={this.style.tabs}>
                     <FlatButton style={this.style.button}
                                 label={"Home"}
-                                onClick={this.props.setSelectedToHome}/>
+                                onClick={this.clickHome}/>
                     <FlatButton style={this.style.button}
                                 label={"About Me"}
-                                onClick={this.props.setSelectedToAboutMe}/>
+                                onClick={this.clickAboutMe}/>
                     <FlatButton style={this.style.button}
                                 label={"Projects"}
-                                onClick={this.props.setSelectedToProjects}/>
+                                onClick={this.clickProjects}/>
                     <FlatButton style={this.style.button}
                                 label={"Contact"}
-                                onClick={this.props.setSelectedToContact}/>
-
+                                onClick={this.clickContact}/>
                 </div>
             </div>
         )
