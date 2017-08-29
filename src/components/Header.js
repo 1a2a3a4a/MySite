@@ -10,8 +10,9 @@ class Header extends Component {
         this.style = {
             button:{
                 margin: '5px',
-                border: 'solid 1px white',
-                backgroundColor: 'white'
+                border: 'solid 1px black',
+                backgroundColor: 'white',
+                fontFamily: 'Rokkitt',
             },
             tabs: {
                 display: 'flex',

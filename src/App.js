@@ -6,6 +6,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from './components/Header'
 import * as Strings from './constants/strings'
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 injectTapEventPlugin();
 class App extends Component {
     constructor(){
@@ -81,7 +83,7 @@ class App extends Component {
 
     homeHTML(){
         return(
-                <div key={1} style={this.style.home}>
+                <div style={this.style.home}>
                     <Home
                         setSelectedToAboutMe={this.setSelectedToAboutMe}
                         setSelectedToProjects={this.setSelectedToProjects}
@@ -93,7 +95,7 @@ class App extends Component {
 
     aboutMeHTML(){
         return(
-                <div key={2} style={this.style.container}>
+                <div style={this.style.container}>
                     <AboutMe/>
                 </div>
         )
@@ -101,16 +103,16 @@ class App extends Component {
 
     contactHTML(){
         return(
-            <div>
-
+            <div style={this.style.container}>
+                <Contact/>
             </div>
         )
     }
 
     projectsHTML(){
         return(
-            <div>
-
+            <div style={this.style.container}>
+                <Projects/>
             </div>
         )
     }

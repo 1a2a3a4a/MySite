@@ -8,3 +8,5 @@ export const aboutMe = 'aboutMe';
 export const home = 'home'
 export const contact = 'contact';
 export const projects = 'projects'
+export const queueliary = 'queueliary'
+export const RealTimeSummoners = 'RealTimeSummoners'

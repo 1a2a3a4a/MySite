@@ -16,9 +16,6 @@ class Home extends  Component{
 
             font: {
                 fontSize: '500%',
-                color: 'white',
-                fontFamily:'Times New Roman',
-
             },
         };
         return(
