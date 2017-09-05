@@ -15,14 +15,24 @@ class Projects extends  Component {
            render_project: 'default',
 
         };
-
         this.style = {
             header: {
                 display: 'flex',
             },
             listItem: {
                 cursor: 'pointer',
-            }
+            },
+            projectTitle: {
+                color   : 'darkblue',
+                fontSize: '120%',
+                fontFamily: 'Vollkorn',
+            },
+            container: {
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+            },
+
         }
     }
 
@@ -39,13 +49,14 @@ class Projects extends  Component {
             case Strings.queueliary:
                 return <Queueliary/>
             case Strings.RealTimeSummoners:
+                return
                 break;
             default:
                 return(
                 <Paper>
                     <ul>
-                        <li style={this.style.listItem} onClick={this.clickQueueliary}> Queueliary - A real time online queue system aimed for students and teachers</li>
-                        <li style={this.style.listItem}>Coming soon.... Real time summoner cd timers for league of legends</li>
+                        <li style={this.style.listItem} onClick={this.clickQueueliary}> <span style={this.style.projectTitle}>Queueliary</span> - A real time online queue system aimed for students and teachers</li>
+                        <li style={this.style.listItem}>Coming soon.... Cooperative real time summoner spells cooldown timers for league of legends</li>
                     </ul>
                 </Paper>)
         }
@@ -65,7 +76,7 @@ class Projects extends  Component {
                     enter={"transition.fadeIn"}
                     leave={"transition.fadeOut"}
                 >
-                    <div>
+                    <div style={this.style.container}>
                         <h2>My Projects</h2>
                         {this.renderProject()}
                     </div>

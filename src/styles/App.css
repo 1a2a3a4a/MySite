@@ -4,17 +4,26 @@ body {
 h1{
   font-family: 'Rokkitt', serif;
 }
+
 h2{
   font-family: 'Vollkorn', serif;
 }
-
+h3{
+  font-family: 'Vollkorn', serif;
+}
 p {
   padding: 5px;
   margin: 30px;
+  line-height: 140%;
   font-family: 'Rokkitt', serif;
 }
 
 li {
   font-family: 'Rokkitt', serif;
   padding: 15px;
+}
+
+a {
+  font-family: 'Rokkitt', serif;
+  color: darkblue;
 }

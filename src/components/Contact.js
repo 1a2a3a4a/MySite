@@ -6,6 +6,8 @@ import {VelocityTransitionGroup } from 'velocity-react';
 import 'velocity-animate'
 import 'velocity-animate/velocity.ui'
 import Paper from 'material-ui/Paper'
+import { SocialIcon } from 'react-social-icons';
+
 class Contact extends  Component {
     render() {
         return(
@@ -19,9 +21,9 @@ class Contact extends  Component {
                         <h2>Contact Me</h2>
                         <Paper>
                             <ul>
-                                <li><a href="https://www.twitter.com/brocodily">Twitter</a></li>
-                                <li><a href="https://www.github.com/1a2a3a4a">Github</a></li>
-                                <li><a href={"https://www.mailto:brocodily@gmail.com"}>Mail</a></li>
+                                <li><SocialIcon url="https://twitter.com/brocodily" /></li>
+                                <li><SocialIcon url="https://www.github.com/1a2a3a4a" /></li>
+                                <li><SocialIcon url="https://www.mailto:brocodily@gmail.com" /></li>
                             </ul>
                         </Paper>
                     </div>
