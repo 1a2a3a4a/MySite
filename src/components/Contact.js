@@ -24,7 +24,7 @@ class Contact extends  Component {
                                 <li><SocialIcon url="https://twitter.com/brocodily" /></li>
                                 <li><SocialIcon url="https://www.github.com/1a2a3a4a" /></li>
                                 <li><SocialIcon url="https://www.mailto:brocodily@gmail.com"/></li>
-                                <li><SocialIcon url="https://www.linkedin.com" /></li>
+                                <li><SocialIcon url="https://www.linkedin.com/in/tony-wang-39bb6a96/" /></li>
                             </ul>
                         </Paper>
                     </div>
@@ -33,4 +33,9 @@ class Contact extends  Component {
         )
     }
 }
+
+
+
+
+
 export default Contact
