@@ -52,6 +52,8 @@ class Header extends Component {
                 break;
             case Strings.contact:
                 break;
+            default:
+                return
 
         }
     }

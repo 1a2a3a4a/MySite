@@ -7,9 +7,9 @@ import Paper from 'material-ui/Paper'
 import {VelocityTransitionGroup } from 'velocity-react';
 import 'velocity-animate'
 import 'velocity-animate/velocity.ui'
+
 class AboutMe extends  Component {
     render() {
-
         return(
             <div>
                 <VelocityTransitionGroup
@@ -21,9 +21,11 @@ class AboutMe extends  Component {
                         <h2>About me</h2>
                         <Paper>
                             <p>
-                                My name is Tony and I am an aspiring developer. I am currently a student at Uppsala University<br/>
+                                My name is Tony and I am an aspiring developer. I am currently a student at Uppsala University.<br/>
                                 On my free time I enjoy working on various projects. You can take a look at my my projects in the projects link.<br/>
-                                This website is developed using the React js library.<br/>
+                                I am currently interested in web programming and working with the React javascript framework.<br/>
+                                This website and my other web projects are made using React.<br/>
+                                On my non programming free time I enjoy playing PC games and working out at the gym.
                             </p>
                         </Paper>
                     </div>
@@ -31,7 +33,6 @@ class AboutMe extends  Component {
             </div>
         )
     }
-
 }
 
 export default AboutMe

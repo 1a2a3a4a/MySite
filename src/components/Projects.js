@@ -31,6 +31,7 @@ class Projects extends  Component {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                flexFlow: 'column wrap'
             },
 
         }
@@ -44,21 +45,26 @@ class Projects extends  Component {
         }
     }
 
+
+
+
     renderProject = () => {
         switch(this.state.render_project){
             case Strings.queueliary:
                 return <Queueliary/>
             case Strings.RealTimeSummoners:
                 return
-                break;
             default:
                 return(
-                <Paper>
-                    <ul>
-                        <li style={this.style.listItem} onClick={this.clickQueueliary}> <span style={this.style.projectTitle}>Queueliary</span> - A real time online queue system aimed for students and teachers</li>
-                        <li style={this.style.listItem}>Coming soon.... Cooperative real time summoner spells cooldown timers for league of legends</li>
-                    </ul>
-                </Paper>)
+                    <div>
+                    <h2>My Projects</h2>
+                    <Paper>
+                        <ul>
+                            <li style={this.style.listItem} onClick={this.clickQueueliary}> <span style={this.style.projectTitle}>Queueliary</span> - A real time online queue system aimed for students and teachers</li>
+                            <li style={this.style.listItem}>Coming soon.... Cooperative real time summoner spells cooldown timers for league of legends</li>
+                        </ul>
+                    </Paper>
+                    </div>)
         }
     }
 
@@ -76,8 +82,7 @@ class Projects extends  Component {
                     enter={"transition.fadeIn"}
                     leave={"transition.fadeOut"}
                 >
-                    <div style={this.style.container}>
-                        <h2>My Projects</h2>
+                    <div >
                         {this.renderProject()}
                     </div>
                 </VelocityTransitionGroup>

@@ -23,7 +23,8 @@ class Contact extends  Component {
                             <ul>
                                 <li><SocialIcon url="https://twitter.com/brocodily" /></li>
                                 <li><SocialIcon url="https://www.github.com/1a2a3a4a" /></li>
-                                <li><SocialIcon url="https://www.mailto:brocodily@gmail.com" /></li>
+                                <li><SocialIcon url="https://www.mailto:brocodily@gmail.com"/></li>
+                                <li><SocialIcon url="https://www.linkedin.com" /></li>
                             </ul>
                         </Paper>
                     </div>
