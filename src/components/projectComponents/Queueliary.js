@@ -49,7 +49,7 @@ class Queueliary extends Component{
                     <a target="_blank" href="https://queueliary.firebaseapp.com/">Click here to visit!</a>
                     <p style={{width: '50%'}}>
                         Queueliary is a web application aimed for teacher and students.<br/>
-                        The purpose is to solve the issues where many students need the assistance of few teachers
+                        The purpose is to solve the issues where many students need the assistance of few teachers.
                         With Queueliary you can create an online queue,<br/> invite teachers and students to the queue
                         and then let the students create queueing tickets where they can put in their name
                         and any additional comments.<br/>
