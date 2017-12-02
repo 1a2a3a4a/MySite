@@ -8,6 +8,9 @@ import {VelocityTransitionGroup } from 'velocity-react';
 import 'velocity-animate'
 import 'velocity-animate/velocity.ui'
 import * as Strings from '../constants/strings'
+
+import * as mediaQuery from '../constants/mediaQuery';
+import MediaQuery from 'react-responsive';
 class Projects extends  Component {
     constructor(){
         super();
@@ -57,7 +60,9 @@ class Projects extends  Component {
             default:
                 return(
                     <div>
-                    <h2>My Projects</h2>
+                        <MediaQuery minDeviceWidth={mediaQuery.minWidth}>
+                        <h2>My Projects</h2>
+                        </MediaQuery>
                     <Paper>
                         <ul>
                             <li style={this.style.listItem} onClick={this.clickQueueliary}> <span style={this.style.projectTitle}>Queueliary</span> - A real time online queue system aimed for students and teachers</li>

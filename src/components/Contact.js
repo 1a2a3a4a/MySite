@@ -5,6 +5,10 @@ import React, { Component } from 'react';
 import {VelocityTransitionGroup } from 'velocity-react';
 import 'velocity-animate'
 import 'velocity-animate/velocity.ui'
+
+
+import * as mediaQuery from '../constants/mediaQuery';
+import MediaQuery from 'react-responsive';
 import Paper from 'material-ui/Paper'
 import { SocialIcon } from 'react-social-icons';
 
@@ -18,7 +22,9 @@ class Contact extends  Component {
                     leave={"transition.fadeOut"}
                 >
                     <div>
+                        <MediaQuery minDeviceWidth={mediaQuery.minWidth}>
                         <h2>Contact Me</h2>
+                        </MediaQuery>
                         <Paper>
                             <ul>
                                 <li><SocialIcon url="https://twitter.com/brocodily" /></li>

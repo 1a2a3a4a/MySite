@@ -7,6 +7,8 @@ import Paper from 'material-ui/Paper'
 import {VelocityTransitionGroup } from 'velocity-react';
 import 'velocity-animate'
 import 'velocity-animate/velocity.ui'
+import * as mediaQuery from '../constants/mediaQuery';
+import MediaQuery from 'react-responsive';
 
 class AboutMe extends  Component {
     render() {
@@ -18,7 +20,9 @@ class AboutMe extends  Component {
                     leave={"transition.fadeOut"}
                 >
                     <div>
+                        <MediaQuery minDeviceWidth={mediaQuery.minWidth}>
                         <h2>About me</h2>
+                        </MediaQuery>
                         <Paper>
                             <p>
                                 My name is Tony and I am an aspiring developer. I am currently a student at Uppsala University.<br/>

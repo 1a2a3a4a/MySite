@@ -3,10 +3,12 @@ body {
 }
 h1{
   font-family: 'Rokkitt', serif;
+  margin-left: 10px;
 }
 
 h2{
   font-family: 'Vollkorn', serif;
+  margin-left: 10px;
 }
 h3{
   font-family: 'Vollkorn', serif;

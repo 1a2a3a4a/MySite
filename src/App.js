@@ -28,12 +28,12 @@ class App extends Component {
                 justifyContent: 'center',
                 alignContent: 'center',
                 alignItems: 'center',
-                marginTop: '100px',
             },
             container: {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                margin:'5px',
             }
         };
     }
@@ -66,7 +66,6 @@ class App extends Component {
     }
 
     getSelectedMenuItem(){
-
         switch(this.state.selected){
             case Strings.aboutMe:
                 return this.aboutMeHTML()
@@ -82,6 +81,7 @@ class App extends Component {
     }
 
     homeHTML(){
+
         return(
                 <div style={this.style.home}>
                     <Home
