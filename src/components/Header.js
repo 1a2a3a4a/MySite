@@ -31,7 +31,7 @@ class Header extends Component {
                 fontFamily: 'Rokkitt',
             },
             menuItem: {
-                width: '100%',
+                width: '400px',
                 fontFamily: 'Rokkitt',
             },
             underLine: {
